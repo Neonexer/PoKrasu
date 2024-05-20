@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .articles {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        .article {
+            width: 20vw;
+            background-color: grey;
+            border-radius: 23px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% if articles %}
+        <div class="articles">
+            <div>
+                <h1>Статьи</h1>
+                {% for el in articles %}
+                    <div class="article">
+                        <h2>{{ el.title }}</h2>
+                        <h3>{{ el.subtitle }}</h3>
+                        <p>{{ el.date }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="no-article">
+            <h1>Нет статей!</h1>
+        </div>
+    {% endif %}
+
+</body>
+</html>
