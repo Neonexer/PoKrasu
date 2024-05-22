@@ -21,7 +21,8 @@ class SignUpForm(ModelForm):
             "password": TextInput(attrs={
                 "id": "password-field",
                 "class": "input",
-                "placeholder": "Введите пароль"
+                "placeholder": "Введите пароль",
+                "type": "password"
             })
         }
 
