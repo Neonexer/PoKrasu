@@ -1,16 +1,18 @@
 import hashlib
-
 from django.core.mail.backends import console
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, LogInForm
+
 # Create your views here.
+
 def login(request):
     error = ''
     if request.method == "POST":
         form = LogInForm(request.POST)
         if form.is_valid():
+
             print(request.POST.get('username'))
-            console.log(request.POST.get('username'))
+            # console.log(request.POST.get('username'))
             form.save()
             return redirect('articles')
         else:
@@ -19,7 +21,6 @@ def login(request):
     form = LogInForm()
 
     data = {"form": form, "error": error}
-
 
     return render(request, "user_auth/login.html", data)
 
@@ -44,9 +45,14 @@ def signup(request):
                 print(error)
         else:
             error = "Form is not valid"
+            print(error)
+            print(form.errors)
+
+
+            # Выводить ошибки на экран
+            # Писать куки
     form = SignUpForm()
 
     data = {"form": form, "error": error}
-
 
     return render(request, "user_auth/signup.html", data)
