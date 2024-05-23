@@ -1,3 +1,5 @@
+import hashlib
+
 from django.core.mail.backends import console
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, LogInForm
@@ -28,7 +30,13 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             if request.POST.get('password') == request.POST.get('password2'):
-                form.save()
+                print(request.POST.get('password'))
+                instance = form.save(commit=False)
+                instance.password = hashlib.sha256(request.POST.get('password').encode('utf-8')).hexdigest()
+
+                print(instance.password)
+
+                instance.save()
                 print(request.POST.get('username'))
                 return redirect('articles')
             else:

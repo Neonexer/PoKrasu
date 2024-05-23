@@ -171,21 +171,21 @@ $primary-color: #333;
 
 // tablet
 @media screen and (min-width: 700px) {
-  $form-width: 400px;
-  $form-height: 430px;
-  $input-width: 320px;
-  $input-height: 45px;
+  $form-width: 340px;
+  $form-height: 370px;
+  $input-width: 280px;
+  $input-height: 40px;
 
   $input-border-radius: 15px;
 
-  $icon-margin: 55px;
-  $icon-margin-top: 50%;
-  $margin-bottom: 15px;
-  $txt-margin-right: 35px;
+  $icon-margin: 45px;
+  $icon-margin-top: 48%;
+  $margin-bottom: 10px;
+  $txt-margin-right: 30px;
 
-  $head-font-size: 35px;
-  $input-font-size: 20px;
-  $btn-font-size: 22px;
+  $head-font-size: 30px;
+  $input-font-size: 18px;
+  $btn-font-size: 20px;
   $txt-font-size: 18px;
   $txt-font-size2: 14px;
 
@@ -317,26 +317,25 @@ $primary-color: #333;
 }
 }
 
-
 // laptop
 @media screen and (min-width: 1000px) {
-  $form-width: 500px;
-  $form-height: 530px;
-  $input-width: 420px;
-  $input-height: 55px;
+  $form-width: 400px;
+  $form-height: 430px;
+  $input-width: 330px;
+  $input-height: 45px;
 
-  $input-border-radius: 18px;
+  $input-border-radius: 15px;
 
-  $icon-margin: 55px;
-  $icon-margin-top: 49%;
-  $margin-bottom: 15px;
-  $txt-margin-right: 35px;
+  $icon-margin: 50px;
+  $icon-margin-top: 48%;
+  $margin-bottom: 10px;
+  $txt-margin-right: 32px;
 
-  $head-font-size: 45px;
-  $input-font-size: 26px;
-  $btn-font-size: 27px;
-  $txt-font-size: 24px;
-  $txt-font-size2: 18px;
+  $head-font-size: 35px;
+  $input-font-size: 20px;
+  $btn-font-size: 22px;
+  $txt-font-size: 20px;
+  $txt-font-size2: 16px;
 
   .login-form {
   width: $form-width;
