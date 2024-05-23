@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="{% static 'restaurants/css/styles.css' %}">
 </head>
 <body>
-
     <header>
     <div class="container">
         <div class="logo">
@@ -114,6 +113,20 @@
         <main class="content">
             <h1>Рестораны Красноярска</h1>
             <ul>
+
+                {% for el in data %}
+                    <li class="card">
+                        <img src="{{ el.image }}" alt="{{ el.name }}">
+                        <div class="card-info">
+                            <h2>{{ el.name }}</h2>
+                            <p class="rating">{{ el.raiting }}<span>9999 отзывов</span></p>
+                            <p class="cuisine">{{ el.type }}</p>
+                            <p class="address address-divider">{{ el.street }}, {{ el.home }}</p>
+                            <p class="review">"Отличное место"</p>
+                            <p class="review">"Просто прекрасно"</p>
+                        </div>
+                    </li>
+                {% endfor %}
                 <li class="card">
                     <img src="https://blog.ostrovok.ru/wp-content/uploads/2022/09/8-5.jpg" alt="Tunguska">
                     <div class="card-info">
