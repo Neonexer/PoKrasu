@@ -111,54 +111,22 @@
               
         </aside>
         <main class="content">
-            <h1>Рестораны Красноярска</h1>
+            <h1>Рестораны Красноярска - {{ count }} ресторанов</h1>
             <ul>
 
-                {% for el in data %}
+                {% for el in restaurants %}
                     <li class="card">
                         <img src="{{ el.image }}" alt="{{ el.name }}">
                         <div class="card-info">
                             <h2>{{ el.name }}</h2>
-                            <p class="rating">{{ el.raiting }}<span>9999 отзывов</span></p>
+                            <p class="rating">{{ el.rating }}<span>9999 отзывов</span></p>
                             <p class="cuisine">{{ el.type }}</p>
-                            <p class="address address-divider">{{ el.street }}, {{ el.home }}</p>
+                            <p class="address address-divider">{{ el.address }}</p>
                             <p class="review">"Отличное место"</p>
                             <p class="review">"Просто прекрасно"</p>
                         </div>
                     </li>
                 {% endfor %}
-                <li class="card">
-                    <img src="https://blog.ostrovok.ru/wp-content/uploads/2022/09/8-5.jpg" alt="Tunguska">
-                    <div class="card-info">
-                        <h2>Tunguska</h2>
-                        <p class="rating">5.0 <span>9999 отзывов</span></p>
-                        <p class="cuisine">Русская Европейская</p>
-                        <p class="address address-divider">ул. Весна, 30, микрорайон Взлётка (этаж 1)</p>
-                        <p class="review">"Отличное место"</p>
-                        <p class="review">"Просто прекрасно"</p>
-                    </div>
-                </li><li class="card">
-                    <img src="https://blog.ostrovok.ru/wp-content/uploads/2022/09/8-5.jpg" alt="Tunguska">
-                    <div class="card-info">
-                        <h2>Tunguska</h2>
-                        <p class="rating">5.0 <span>9999 отзывов</span></p>
-                        <p class="cuisine">Русская Европейская</p>
-                        <p class="address address-divider">ул. Весна, 30, микрорайон Взлётка (этаж 1)</p>
-                        <p class="review">"Отличное место"</p>
-                        <p class="review">"Просто прекрасно"</p>
-                    </div>
-                </li><li class="card">
-                    <img src="https://blog.ostrovok.ru/wp-content/uploads/2022/09/8-5.jpg" alt="Tunguska">
-                    <div class="card-info">
-                        <h2>Tunguska</h2>
-                        <p class="rating">5.0 <span>9999 отзывов</span></p>
-                        <p class="cuisine">Русская Европейская</p>
-                        <p class="address address-divider">ул. Весна, 30, микрорайон Взлётка (этаж 1)</p>
-                        <p class="review">"Отличное место"</p>
-                        <p class="review">"Просто прекрасно"</p>
-                    </div>
-                </li>  
-               
             </ul>
             
                 
