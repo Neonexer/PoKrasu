@@ -458,7 +458,7 @@
     color: #475f74;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1450px) {
   .login-form {
     width: 1200px;
     height: 1250px;
