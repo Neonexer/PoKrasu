@@ -616,23 +616,23 @@ $primary-color: #333;
 
 // 4k
 @media screen and (min-width: 1450px) {
-  $form-width: 1200px;
-  $form-height: 1250px;
-  $input-width: 1000px;
+  $form-width: 1000px;
+  $form-height: 1150px;
+  $input-width: 900px;
   $input-height: 100px;
 
   $input-border-radius: 25px;
 
-  $icon-margin: 130px;
-  $icon-margin-top: 49%;
+  $icon-margin: 100px;
+  $icon-margin-top: 47%;
   $margin-bottom: 35px;
-  $txt-margin-right: 100px;
+  $txt-margin-right: 60px;
 
-  $head-font-size: 90px;
-  $input-font-size: 48px;
-  $btn-font-size: 50px;
-  $txt-font-size: 46px;
-  $txt-font-size2: 44px;
+  $head-font-size: 80px;
+  $input-font-size: 46px;
+  $btn-font-size: 48px;
+  $txt-font-size: 44px;
+  $txt-font-size2: 42px;
 
   .login-form {
   width: $form-width;
