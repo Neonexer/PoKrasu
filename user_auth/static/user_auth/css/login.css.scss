@@ -22,9 +22,28 @@ $primary-color: #333;
   background-size: cover;
 }
 
-.login-form {
-  width: 400px;
-  height: 420px;
+// min
+@media screen and (min-width: 100px) {
+  $form-width: 250px;
+  $form-height: 275px;
+  $input-width: 200px;
+  $input-height: 30px;
+
+  $input-border-radius: 12px;
+
+  $icon-margin: 32px;
+  $icon-margin-top: 47%;
+  $margin-bottom: 10px;
+
+  $head-font-size: 20px;
+  $input-font-size: 12px;
+  $btn-font-size: 14px;
+  $txt-font-size: 12px;
+  $txt-font-size2: 10px;
+
+  .login-form {
+  width: $form-width;
+  height: $form-height;
 
   background-color: #fff;
   border-radius: 15px;
@@ -42,19 +61,19 @@ $primary-color: #333;
 
   .form-content {
     position: fixed;
-    width: 400px;
-    height: 420px;
+    width: $form-width;
+    height: $form-height;
     display: flex;
     flex-direction: column;
     justify-self: center;
-    justify-content: center; //
+    justify-content: center;
     align-items: center;
 
       h1 {
       margin-top: 15px;
       font-family: $font;
       font-weight: 500;
-      font-size: 36px;
+      font-size: $head-font-size;
       text-transform: uppercase;
       text-align: center;
       color: #000;
@@ -63,21 +82,21 @@ $primary-color: #333;
 
     .input {
       border: 1px solid hsl(0, 0%, 0%);
-      width: 310px;
-      height: 50px;
-      border-radius: 15px;
+      width: $input-width;
+      height: $input-height;
+      border-radius: $input-border-radius;
       margin-left: 45px;
       margin-right: 45px;
       font-family: $font;
       // font-weight: 400;
-      font-size: 16px;
+      font-size: $input-font-size;
       text-align: left;
       color: #000;
       padding-left: 10px;
     }
 
     #input-name {
-      margin-bottom: 23px;
+      margin-bottom: 10px;
     }
 
     .password-icon {
@@ -85,8 +104,8 @@ $primary-color: #333;
       height: 20px;
       position: absolute;
       // background-color: green;
-      right: 60px;
-      top: 46%;
+      right: $icon-margin;
+      top: $icon-margin-top;
       cursor: pointer;
       // background-color: red;
       background: url("../images/closed_eye.svg") 0 0 no-repeat;
@@ -100,49 +119,645 @@ $primary-color: #333;
       // background-color: green;
       font-family: $font;
       font-weight: 400;
-      font-size: 16px;
+      font-size: $txt-font-size2;
       text-decoration: underline;
       text-decoration-skip-ink: none;
       color: #000;
       align-self: flex-end;
-      margin-right: 43px;
-      margin-top: 19px;
+      margin-right: 25px;
+      margin-top: 5px;
     }
 
     .enter-btn {
       border: 0 solid transparent;
-      margin-top: 17px;
-      border-radius: 15px;
-      padding: 10px 44px;
-      width: 322px;
-      height: 52px;
+      margin-top: 5px;
+      border-radius: $input-border-radius;
+      //padding: 10px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $input-width+12;
+      height: $input-height;
       background: #475f74;
 
       div {
         font-family: var(--font-family);
         font-weight: 800;
-        font-size: 25px;
+        font-size: $txt-font-size;
         text-align: center;
         color: #fff;
       }
     }
 
     .no-account {
-      margin-top: 15px;
+      margin-top: 10px;
       font-family: var(--font-family);
       font-weight: 400;
-      font-size: 18px;
+      font-size: $txt-font-size;
       text-align: center;
       color: #000;
     }
 
     .register {
       font-weight: 800;
-      font-size: 19px;
+      font-size: $txt-font-size;
       text-decoration: underline;
       text-decoration-skip-ink: none;
       color: #475f74;
     }
   }
 }
+}
 
+// tablet
+@media screen and (min-width: 700px) {
+  $form-width: 400px;
+  $form-height: 430px;
+  $input-width: 320px;
+  $input-height: 45px;
+
+  $input-border-radius: 15px;
+
+  $icon-margin: 55px;
+  $icon-margin-top: 50%;
+  $margin-bottom: 15px;
+  $txt-margin-right: 35px;
+
+  $head-font-size: 35px;
+  $input-font-size: 20px;
+  $btn-font-size: 22px;
+  $txt-font-size: 18px;
+  $txt-font-size2: 14px;
+
+  .login-form {
+  width: $form-width;
+  height: $form-height;
+
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: start;
+
+  .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .form-content {
+    position: fixed;
+    width: $form-width;
+    height: $form-height;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+
+      h1 {
+      margin-top: 15px;
+      font-family: $font;
+      font-weight: 500;
+      font-size: $head-font-size;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .input {
+      border: 1px solid hsl(0, 0%, 0%);
+      width: $input-width;
+      height: $input-height;
+      border-radius: $input-border-radius;
+      margin-left: 45px;
+      margin-right: 45px;
+      font-family: $font;
+      // font-weight: 400;
+      font-size: $input-font-size;
+      text-align: left;
+      color: #000;
+      padding-left: 10px;
+    }
+
+    #input-name {
+      margin-bottom: $margin-bottom;
+    }
+
+    .password-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      // background-color: green;
+      right: $icon-margin;
+      top: $icon-margin-top;
+      cursor: pointer;
+      // background-color: red;
+      background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    }
+
+    .password-icon.opened {
+      background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    }
+
+    .forgot-password {
+      // background-color: green;
+      font-family: $font;
+      font-weight: 400;
+      font-size: $txt-font-size2;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #000;
+      align-self: flex-end;
+      margin-right: $txt-margin-right;
+      margin-top: 5px;
+    }
+
+    .enter-btn {
+      border: 0 solid transparent;
+      margin-top: 5px;
+      border-radius: $input-border-radius;
+      //padding: 10px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $input-width+12;
+      height: $input-height;
+      background: #475f74;
+
+      div {
+        font-family: var(--font-family);
+        font-weight: 800;
+        font-size: $btn-font-size;
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .no-account {
+      margin-top: 10px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: $txt-font-size;
+      text-align: center;
+      color: #000;
+    }
+
+    .register {
+      font-weight: 800;
+      font-size: $txt-font-size;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #475f74;
+    }
+  }
+}
+}
+
+
+// laptop
+@media screen and (min-width: 1000px) {
+  $form-width: 500px;
+  $form-height: 530px;
+  $input-width: 420px;
+  $input-height: 55px;
+
+  $input-border-radius: 18px;
+
+  $icon-margin: 55px;
+  $icon-margin-top: 49%;
+  $margin-bottom: 15px;
+  $txt-margin-right: 35px;
+
+  $head-font-size: 45px;
+  $input-font-size: 26px;
+  $btn-font-size: 27px;
+  $txt-font-size: 24px;
+  $txt-font-size2: 18px;
+
+  .login-form {
+  width: $form-width;
+  height: $form-height;
+
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: start;
+
+  .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .form-content {
+    position: fixed;
+    width: $form-width;
+    height: $form-height;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+
+      h1 {
+      margin-top: 15px;
+      font-family: $font;
+      font-weight: 500;
+      font-size: $head-font-size;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .input {
+      border: 1px solid hsl(0, 0%, 0%);
+      width: $input-width;
+      height: $input-height;
+      border-radius: $input-border-radius;
+      margin-left: 45px;
+      margin-right: 45px;
+      font-family: $font;
+      // font-weight: 400;
+      font-size: $input-font-size;
+      text-align: left;
+      color: #000;
+      padding-left: 10px;
+    }
+
+    #input-name {
+      margin-bottom: $margin-bottom;
+    }
+
+    .password-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      // background-color: green;
+      right: $icon-margin;
+      top: $icon-margin-top;
+      cursor: pointer;
+      // background-color: red;
+      background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    }
+
+    .password-icon.opened {
+      background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    }
+
+    .forgot-password {
+      // background-color: green;
+      font-family: $font;
+      font-weight: 400;
+      font-size: $txt-font-size2;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #000;
+      align-self: flex-end;
+      margin-right: $txt-margin-right;
+      margin-top: 5px;
+    }
+
+    .enter-btn {
+      border: 0 solid transparent;
+      margin-top: 5px;
+      border-radius: $input-border-radius;
+      //padding: 10px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $input-width+12;
+      height: $input-height;
+      background: #475f74;
+
+      div {
+        font-family: var(--font-family);
+        font-weight: 800;
+        font-size: $btn-font-size;
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .no-account {
+      margin-top: 10px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: $txt-font-size;
+      text-align: center;
+      color: #000;
+    }
+
+    .register {
+      font-weight: 800;
+      font-size: $txt-font-size;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #475f74;
+    }
+  }
+}
+}
+
+// 2k
+@media screen and (min-width: 1400px) {
+  $form-width: 600px;
+  $form-height: 620px;
+  $input-width: 520px;
+  $input-height: 65px;
+
+  $input-border-radius: 20px;
+
+  $icon-margin: 60px;
+  $icon-margin-top: 49%;
+  $margin-bottom: 15px;
+  $txt-margin-right: 37px;
+
+  $head-font-size: 55px;
+  $input-font-size: 28px;
+  $btn-font-size: 28px;
+  $txt-font-size: 26px;
+  $txt-font-size2: 20px;
+
+  .login-form {
+  width: $form-width;
+  height: $form-height;
+
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: start;
+
+  .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .form-content {
+    position: fixed;
+    width: $form-width;
+    height: $form-height;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+
+      h1 {
+      margin-top: 15px;
+      font-family: $font;
+      font-weight: 500;
+      font-size: $head-font-size;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .input {
+      border: 1px solid hsl(0, 0%, 0%);
+      width: $input-width;
+      height: $input-height;
+      border-radius: $input-border-radius;
+      margin-left: 45px;
+      margin-right: 45px;
+      font-family: $font;
+      // font-weight: 400;
+      font-size: $input-font-size;
+      text-align: left;
+      color: #000;
+      padding-left: 10px;
+    }
+
+    #input-name {
+      margin-bottom: $margin-bottom;
+    }
+
+    .password-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      // background-color: green;
+      right: $icon-margin;
+      top: $icon-margin-top;
+      cursor: pointer;
+      // background-color: red;
+      background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    }
+
+    .password-icon.opened {
+      background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    }
+
+    .forgot-password {
+      // background-color: green;
+      font-family: $font;
+      font-weight: 400;
+      font-size: $txt-font-size2;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #000;
+      align-self: flex-end;
+      margin-right: $txt-margin-right;
+      margin-top: 10px;
+    }
+
+    .enter-btn {
+      border: 0 solid transparent;
+      margin-top: 10px;
+      border-radius: $input-border-radius;
+      //padding: 10px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $input-width+12;
+      height: $input-height;
+      background: #475f74;
+
+      div {
+        font-family: var(--font-family);
+        font-weight: 800;
+        font-size: $btn-font-size;
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .no-account {
+      margin-top: 20px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: $txt-font-size;
+      text-align: center;
+      color: #000;
+    }
+
+    .register {
+      font-weight: 800;
+      font-size: $txt-font-size;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #475f74;
+    }
+  }
+}
+}
+
+// 4k
+@media screen and (min-width: 1400px) {
+  $form-width: 1200px;
+  $form-height: 1250px;
+  $input-width: 1000px;
+  $input-height: 100px;
+
+  $input-border-radius: 25px;
+
+  $icon-margin: 130px;
+  $icon-margin-top: 49%;
+  $margin-bottom: 35px;
+  $txt-margin-right: 100px;
+
+  $head-font-size: 90px;
+  $input-font-size: 48px;
+  $btn-font-size: 50px;
+  $txt-font-size: 46px;
+  $txt-font-size2: 44px;
+
+  .login-form {
+  width: $form-width;
+  height: $form-height;
+
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: start;
+
+  .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .form-content {
+    position: fixed;
+    width: $form-width;
+    height: $form-height;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+
+      h1 {
+      margin-top: 15px;
+      font-family: $font;
+      font-weight: 500;
+      font-size: $head-font-size;
+      text-transform: uppercase;
+      text-align: center;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .input {
+      border: 1px solid hsl(0, 0%, 0%);
+      width: $input-width;
+      height: $input-height;
+      border-radius: $input-border-radius;
+      margin-left: 45px;
+      margin-right: 45px;
+      font-family: $font;
+      // font-weight: 400;
+      font-size: $input-font-size;
+      text-align: left;
+      color: #000;
+      padding-left: 10px;
+    }
+
+    #input-name {
+      margin-bottom: $margin-bottom;
+    }
+
+    .password-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      // background-color: green;
+      right: $icon-margin;
+      top: $icon-margin-top;
+      cursor: pointer;
+      // background-color: red;
+      background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    }
+
+    .password-icon.opened {
+      background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    }
+
+    .forgot-password {
+      // background-color: green;
+      font-family: $font;
+      font-weight: 400;
+      font-size: $txt-font-size2;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #000;
+      align-self: flex-end;
+      margin-right: $txt-margin-right;
+      margin-top: 25px;
+    }
+
+    .enter-btn {
+      border: 0 solid transparent;
+      margin-top: 25px;
+      border-radius: $input-border-radius;
+      //padding: 10px 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $input-width+12;
+      height: $input-height;
+      background: #475f74;
+
+      div {
+        font-family: var(--font-family);
+        font-weight: 800;
+        font-size: $btn-font-size;
+        text-align: center;
+        color: #fff;
+      }
+    }
+
+    .no-account {
+      margin-top: 20px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: $txt-font-size;
+      text-align: center;
+      color: #000;
+    }
+
+    .register {
+      font-weight: 800;
+      font-size: $txt-font-size;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #475f74;
+    }
+  }
+}
+}

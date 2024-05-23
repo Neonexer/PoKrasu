@@ -18,111 +18,555 @@
   background-size: cover;
 }
 
-.login-form {
-  width: 400px;
-  height: 420px;
-  background-color: #fff;
-  border-radius: 15px;
-  display: flex;
-  justify-content: start;
+@media screen and (min-width: 100px) {
+  .login-form {
+    width: 250px;
+    height: 275px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+  }
+  .login-form .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .login-form .form-content {
+    position: fixed;
+    width: 250px;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form .form-content h1 {
+    margin-top: 15px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .login-form .form-content .input {
+    border: 1px solid hsl(0, 0%, 0%);
+    width: 200px;
+    height: 30px;
+    border-radius: 12px;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-family: Lato, sans-serif;
+    font-size: 12px;
+    text-align: left;
+    color: #000;
+    padding-left: 10px;
+  }
+  .login-form .form-content #input-name {
+    margin-bottom: 10px;
+  }
+  .login-form .form-content .password-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 32px;
+    top: 47%;
+    cursor: pointer;
+    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .password-icon.opened {
+    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .forgot-password {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #000;
+    align-self: flex-end;
+    margin-right: 25px;
+    margin-top: 5px;
+  }
+  .login-form .form-content .enter-btn {
+    border: 0 solid transparent;
+    margin-top: 5px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 212px;
+    height: 30px;
+    background: #475f74;
+  }
+  .login-form .form-content .enter-btn div {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+  }
+  .login-form .form-content .no-account {
+    margin-top: 10px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+  }
+  .login-form .form-content .register {
+    font-weight: 800;
+    font-size: 12px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #475f74;
+  }
 }
-.login-form .arrow-back {
-  margin-left: 10px;
-  margin-top: 20px;
-  width: fit-content;
-  height: fit-content;
-  z-index: 10;
-  cursor: pointer;
+@media screen and (min-width: 700px) {
+  .login-form {
+    width: 400px;
+    height: 430px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+  }
+  .login-form .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .login-form .form-content {
+    position: fixed;
+    width: 400px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form .form-content h1 {
+    margin-top: 15px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .login-form .form-content .input {
+    border: 1px solid hsl(0, 0%, 0%);
+    width: 320px;
+    height: 45px;
+    border-radius: 15px;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: #000;
+    padding-left: 10px;
+  }
+  .login-form .form-content #input-name {
+    margin-bottom: 15px;
+  }
+  .login-form .form-content .password-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    cursor: pointer;
+    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .password-icon.opened {
+    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .forgot-password {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #000;
+    align-self: flex-end;
+    margin-right: 35px;
+    margin-top: 5px;
+  }
+  .login-form .form-content .enter-btn {
+    border: 0 solid transparent;
+    margin-top: 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 332px;
+    height: 45px;
+    background: #475f74;
+  }
+  .login-form .form-content .enter-btn div {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+  }
+  .login-form .form-content .no-account {
+    margin-top: 10px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+  }
+  .login-form .form-content .register {
+    font-weight: 800;
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #475f74;
+  }
 }
-.login-form .form-content {
-  position: fixed;
-  width: 400px;
-  height: 420px;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 1000px) {
+  .login-form {
+    width: 500px;
+    height: 530px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+  }
+  .login-form .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .login-form .form-content {
+    position: fixed;
+    width: 500px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form .form-content h1 {
+    margin-top: 15px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    font-size: 45px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .login-form .form-content .input {
+    border: 1px solid hsl(0, 0%, 0%);
+    width: 420px;
+    height: 55px;
+    border-radius: 18px;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-family: Lato, sans-serif;
+    font-size: 26px;
+    text-align: left;
+    color: #000;
+    padding-left: 10px;
+  }
+  .login-form .form-content #input-name {
+    margin-bottom: 15px;
+  }
+  .login-form .form-content .password-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 55px;
+    top: 49%;
+    cursor: pointer;
+    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .password-icon.opened {
+    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .forgot-password {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #000;
+    align-self: flex-end;
+    margin-right: 35px;
+    margin-top: 5px;
+  }
+  .login-form .form-content .enter-btn {
+    border: 0 solid transparent;
+    margin-top: 5px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 432px;
+    height: 55px;
+    background: #475f74;
+  }
+  .login-form .form-content .enter-btn div {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 27px;
+    text-align: center;
+    color: #fff;
+  }
+  .login-form .form-content .no-account {
+    margin-top: 10px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    color: #000;
+  }
+  .login-form .form-content .register {
+    font-weight: 800;
+    font-size: 24px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #475f74;
+  }
 }
-.login-form .form-content h1 {
-  margin-top: 15px;
-  font-family: Lato, sans-serif;
-  font-weight: 500;
-  font-size: 36px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #000;
-  margin-bottom: 10px;
+@media screen and (min-width: 1400px) {
+  .login-form {
+    width: 600px;
+    height: 620px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+  }
+  .login-form .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .login-form .form-content {
+    position: fixed;
+    width: 600px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form .form-content h1 {
+    margin-top: 15px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    font-size: 55px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .login-form .form-content .input {
+    border: 1px solid hsl(0, 0%, 0%);
+    width: 520px;
+    height: 65px;
+    border-radius: 20px;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-family: Lato, sans-serif;
+    font-size: 28px;
+    text-align: left;
+    color: #000;
+    padding-left: 10px;
+  }
+  .login-form .form-content #input-name {
+    margin-bottom: 15px;
+  }
+  .login-form .form-content .password-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 60px;
+    top: 49%;
+    cursor: pointer;
+    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .password-icon.opened {
+    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .forgot-password {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #000;
+    align-self: flex-end;
+    margin-right: 37px;
+    margin-top: 10px;
+  }
+  .login-form .form-content .enter-btn {
+    border: 0 solid transparent;
+    margin-top: 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 532px;
+    height: 65px;
+    background: #475f74;
+  }
+  .login-form .form-content .enter-btn div {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 28px;
+    text-align: center;
+    color: #fff;
+  }
+  .login-form .form-content .no-account {
+    margin-top: 20px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 26px;
+    text-align: center;
+    color: #000;
+  }
+  .login-form .form-content .register {
+    font-weight: 800;
+    font-size: 26px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #475f74;
+  }
 }
-.login-form .form-content .input {
-  border: 1px solid hsl(0, 0%, 0%);
-  width: 310px;
-  height: 50px;
-  border-radius: 15px;
-  margin-left: 45px;
-  margin-right: 45px;
-  font-family: Lato, sans-serif;
-  font-size: 16px;
-  text-align: left;
-  color: #000;
-  padding-left: 10px;
-}
-.login-form .form-content #input-name {
-  margin-bottom: 23px;
-}
-.login-form .form-content .password-icon {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 60px;
-  top: 46%;
-  cursor: pointer;
-  background: url("../images/closed_eye.svg") 0 0 no-repeat;
-}
-.login-form .form-content .password-icon.opened {
-  background: url("../images/opened_eye.svg") 0 0 no-repeat;
-}
-.login-form .form-content .forgot-password {
-  font-family: Lato, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: #000;
-  align-self: flex-end;
-  margin-right: 43px;
-  margin-top: 19px;
-}
-.login-form .form-content .enter-btn {
-  border: 0 solid transparent;
-  margin-top: 17px;
-  border-radius: 15px;
-  padding: 10px 44px;
-  width: 322px;
-  height: 52px;
-  background: #475f74;
-}
-.login-form .form-content .enter-btn div {
-  font-family: var(--font-family);
-  font-weight: 800;
-  font-size: 25px;
-  text-align: center;
-  color: #fff;
-}
-.login-form .form-content .no-account {
-  margin-top: 15px;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 18px;
-  text-align: center;
-  color: #000;
-}
-.login-form .form-content .register {
-  font-weight: 800;
-  font-size: 19px;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: #475f74;
+@media screen and (min-width: 1400px) {
+  .login-form {
+    width: 1200px;
+    height: 1250px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: start;
+  }
+  .login-form .arrow-back {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .login-form .form-content {
+    position: fixed;
+    width: 1200px;
+    height: 1250px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-form .form-content h1 {
+    margin-top: 15px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+    font-size: 90px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .login-form .form-content .input {
+    border: 1px solid hsl(0, 0%, 0%);
+    width: 1000px;
+    height: 100px;
+    border-radius: 25px;
+    margin-left: 45px;
+    margin-right: 45px;
+    font-family: Lato, sans-serif;
+    font-size: 48px;
+    text-align: left;
+    color: #000;
+    padding-left: 10px;
+  }
+  .login-form .form-content #input-name {
+    margin-bottom: 35px;
+  }
+  .login-form .form-content .password-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 130px;
+    top: 49%;
+    cursor: pointer;
+    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .password-icon.opened {
+    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+  }
+  .login-form .form-content .forgot-password {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #000;
+    align-self: flex-end;
+    margin-right: 100px;
+    margin-top: 25px;
+  }
+  .login-form .form-content .enter-btn {
+    border: 0 solid transparent;
+    margin-top: 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1012px;
+    height: 100px;
+    background: #475f74;
+  }
+  .login-form .form-content .enter-btn div {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+  }
+  .login-form .form-content .no-account {
+    margin-top: 20px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 46px;
+    text-align: center;
+    color: #000;
+  }
+  .login-form .form-content .register {
+    font-weight: 800;
+    font-size: 46px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #475f74;
+  }
 }
 
 /*# sourceMappingURL=login.css.css.map */
