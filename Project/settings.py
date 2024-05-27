@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "articles.apps.ArticlesConfig",
     "user_auth.apps.UserAuthConfig",
     "restaurants.apps.RestaurantsConfig",
+    "profile_page.apps.ProfilePageConfig",
 ]
 
 MIDDLEWARE = [

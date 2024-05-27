@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'profile_page/css/style.css' %}">
+    <title>Личный кабинет</title>
+</head>
+
+<body>
+
+    <section id="user_lk">
+        <div class="wrapper">
+            <div class="user_lk">
+                <div class="user_lk_flex">
+                    <div class="user_lk_avatar_box">
+                        <div class="user_lk_avatar">
+                            <img src="{% static 'profile_page/img/lesha.jpg' %}" alt="">
+                        </div>
+                        <div class="user_lk_btn">
+                            <a href="">Выйти</a>
+                        </div>
+                    </div>
+                    <div class="user_lk_info">
+                        <h2>Алёша</h2>
+                        <p><span>@nuqo888</span></p>
+                        <p><span>О себе:</span>Красивый, Обаятельный, С хорошим чувством юмора, Скромный, Эпатажный и Ласковый.</p>
+                        <p class="d_flex"><img src="{% static 'profile_page/img/person_pin_circle.svg' %}" alt="">Красноярск</p>
+                    </div>
+                </div>
+                <div class="user_lk_btn">
+                    <a href="{% url 'edit_profile' %}"><img src="{% static 'profile_page/img/settings.svg' %}" alt="">Редактировать</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="user_fav">
+        <div class="wrapper">
+            <div class="user_fav" id="tab-1">
+                <div class="tab-nav">
+                    <button type="button" class="tab-btn tab-btn-active" data-target-id="0">Отзывы</button>
+                    <button type="button" class="tab-btn" data-target-id="1">Фото</button>
+                    <button type="button" class="tab-btn" data-target-id="2">Избранное</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane tab-pane-show" data-id="0">
+                        <div class="cart_box">
+                            <div class="cart_img">
+                                <img src="{% static 'profile_page/img/cart.png' %}" alt="">
+                            </div>
+                            <div class="cart_info">
+                                <h3>Национальный парк «Красноярские Столбы»</h3>
+                                <p><span>5.0</span>9999 отзывов</p>
+                                <div class="key_cart">
+                                    <p>Приора</p>
+                                    <p>Парк</p>
+                                    <p>DESC</p>
+                                    <p>Дивный</p>
+                                    <p>Природа</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_box">
+                            <div class="cart_img">
+                                <img src="{% static 'profile_page/img/cart.png' %}" alt="">
+                            </div>
+                            <div class="cart_info">
+                                <h3>Национальный парк «Красноярские Столбы»</h3>
+                                <p><span>5.0</span>9999 отзывов</p>
+                                <div class="key_cart">
+                                    <p>Приора</p>
+                                    <p>Парк</p>
+                                    <p>DESC</p>
+                                    <p>Дивный</p>
+                                    <p>Природа</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_box">
+                            <div class="cart_img">
+                                <img src="{% static 'profile_page/img/cart.png' %}" alt="">
+                            </div>
+                            <div class="cart_info">
+                                <h3>Национальный парк «Красноярские Столбы»</h3>
+                                <p><span>5.0</span>9999 отзывов</p>
+                                <div class="key_cart">
+                                    <p>Приора</p>
+                                    <p>Парк</p>
+                                    <p>DESC</p>
+                                    <p>Дивный</p>
+                                    <p>Природа</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_box">
+                            <div class="cart_img">
+                                <img src="{% static 'profile_page/img/cart.png' %}" alt="">
+                            </div>
+                            <div class="cart_info">
+                                <h3>Национальный парк «Красноярские Столбы»</h3>
+                                <p><span>5.0</span>9999 отзывов</p>
+                                <div class="key_cart">
+                                    <p>Приора</p>
+                                    <p>Парк</p>
+                                    <p>DESC</p>
+                                    <p>Дивный</p>
+                                    <p>Природа</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_box">
+                            <div class="cart_img">
+                                <img src="{% static 'profile_page/img/cart.png' %}" alt="">
+                            </div>
+                            <div class="cart_info">
+                                <h3>Национальный парк «Красноярские Столбы»</h3>
+                                <p><span>5.0</span>9999 отзывов</p>
+                                <div class="key_cart">
+                                    <p>Приора</p>
+                                    <p>Парк</p>
+                                    <p>DESC</p>
+                                    <p>Дивный</p>
+                                    <p>Природа</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_box">
+                            <div class="cart_img">
+                                <img src="{% static 'profile_page/img/cart.png' %}" alt="">
+                            </div>
+                            <div class="cart_info">
+                                <h3>Национальный парк «Красноярские Столбы»</h3>
+                                <p><span>5.0</span>9999 отзывов</p>
+                                <div class="key_cart">
+                                    <p>Приора</p>
+                                    <p>Парк</p>
+                                    <p>DESC</p>
+                                    <p>Дивный</p>
+                                    <p>Природа</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" data-id="1">Содержимое 2...</div>
+                    <div class="tab-pane" data-id="2">Содержимое 3...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'profile_page/js/main.js' %}"></script>
+</body>
+
+</html>
