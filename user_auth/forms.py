@@ -1,3 +1,5 @@
+from django.contrib.auth.forms import UserCreationForm
+
 from .models import User
 from django.forms import ModelForm, TextInput, EmailInput
 
@@ -44,3 +46,7 @@ class LogInForm(ModelForm):
                 "placeholder": "Введите пароль"
             })
         }
+
+class RegisterForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = User
