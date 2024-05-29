@@ -4,9 +4,9 @@ from django.urls.conf import include
 from . import views
 
 urlpatterns = [
-    path('', include('django.contrib.auth.urls')),
-    # path('login/', views.login, name='login'),
-    path('register/', views.signup, name='register'),
+    # path('', include('django.contrib.auth.urls')),
+    path('login/', views.login, name='login'),
+    path('register/', views.signup, name='signup'),
     # path('', views.login, name='login'),
     # path("signup", views.signup, name='signup'),
 ]

@@ -46,7 +46,3 @@ class LogInForm(ModelForm):
                 "placeholder": "Введите пароль"
             })
         }
-
-class RegisterForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = User

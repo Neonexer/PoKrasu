@@ -1,7 +1,9 @@
 import hashlib
 from django.core.mail.backends import console
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, LogInForm
+
+from user_auth.forms import LogInForm, SignUpForm
+
 
 # Create your views here.
 
@@ -39,7 +41,7 @@ def signup(request):
 
                 instance.save()
                 print(request.POST.get('username'))
-                return redirect('articles')
+                return redirect('profile')
             else:
                 error = "Passwords do not match"
                 print(error)

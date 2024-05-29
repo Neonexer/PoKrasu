@@ -21,16 +21,19 @@
 {#                <input type="text" id="input-name" class="input" placeholder="Имя пользователя">#}
 {#                <input type="email" id="input-email" class="input" placeholder="Email">#}
                 {{ form.username }}
+{#                {{ form.username }}#}
                 {{ form.email }}
+                {{ form.password1 }}
+                {{ form.password2 }}
 
                 <div class="password-container">
 {#                    <input type="password" name="" id="password-field" class="input" placeholder="Введите пароль">#}
-                    {{ form.password }}
+{#                    {{ form.password }}#}
                     <div class="password-icon"></div>
-                    <input type="password" name="password2" id="password-field2" class="input" placeholder="Введите пароль">
+{#                    <input type="password" name="password2" id="password-field2" class="input" placeholder="Введите пароль">#}
                     <div class="password-icon2"></div>
                 </div>
-                <button class="register-btn"><div>Зарегистрироваться</div></button>
+{#                <button class="register-btn"><div>Зарегистрироваться</div></button>#}
                 <p class="have-account">Есть аккаунт? <a href="{% url 'main_page' %}" class="login">Войти</a></p>
             </form>
         </div>
