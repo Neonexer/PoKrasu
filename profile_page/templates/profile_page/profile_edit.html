@@ -18,7 +18,7 @@
                     <img id="profile-photo" src="" alt="Profile Photo">
                     <input type="file" id="photo-input" accept="image/*" onchange="loadPhoto(event)" style="display: none;">
                 </div>
-                <form>
+                <form action="{% url 'profile' %}">
                     <div class="form-group">
                         <label for="name">Имя</label>
                         <input type="text" id="name" name="name">

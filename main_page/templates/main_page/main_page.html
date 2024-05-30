@@ -107,74 +107,20 @@
             <div class="popular">
                 <h2>Популярные места</h2>
                 <div class="popular_content">
-                    <div class="cart_box">
+                    {% for el in restaurants %}
+                        <div class="cart_box">
                         <div class="cart_img">
-                            <img src="img/cart.png" alt="">
+                            <img src="{{ el.image }}" alt="{{ el.name }}">
                         </div>
                         <div class="cart_info">
-                            <h3>Национальный парк «Красноярские Столбы»</h3>
-                            <p><span>5.0</span>9999 отзывов</p>
+                            <h3>{{ el.name }}</h3>
+                            <p><span>{{ el.rating }}</span>9999 отзывов</p>
                             <div class="key_cart">
-                                <p>Приора</p>
-                                <p>Парк</p>
-                                <p>DESC</p>
-                                <p>Дивный</p>
-                                <p>Природа</p>
-
+                                <p>{{ el.type }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="cart_box">
-                        <div class="cart_img">
-                            <img src="img/cart.png" alt="">
-                        </div>
-                        <div class="cart_info">
-                            <h3>Национальный парк «Красноярские Столбы»</h3>
-                            <p><span>5.0</span>9999 отзывов</p>
-                            <div class="key_cart">
-                                <p>Приора</p>
-                                <p>Парк</p>
-                                <p>DESC</p>
-                                <p>Дивный</p>
-                                <p>Природа</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart_box">
-                        <div class="cart_img">
-                            <img src="img/cart.png" alt="">
-                        </div>
-                        <div class="cart_info">
-                            <h3>Национальный парк «Красноярские Столбы»</h3>
-                            <p><span>5.0</span>9999 отзывов</p>
-                            <div class="key_cart">
-                                <p>Приора</p>
-                                <p>Парк</p>
-                                <p>DESC</p>
-                                <p>Дивный</p>
-                                <p>Природа</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cart_box">
-                        <div class="cart_img">
-                            <img src="img/cart.png" alt="">
-                        </div>
-                        <div class="cart_info">
-                            <h3>Национальный парк «Красноярские Столбы»</h3>
-                            <p><span>5.0</span>9999 отзывов</p>
-                            <div class="key_cart">
-                                <p>Приора</p>
-                                <p>Парк</p>
-                                <p>DESC</p>
-                                <p>Дивный</p>
-                                <p>Природа</p>
-
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

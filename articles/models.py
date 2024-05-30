@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from user_auth.models import User
+
 
 # Create your models here.
 class Articles(models.Model):
@@ -9,8 +11,8 @@ class Articles(models.Model):
     subtitle = models.CharField('Подзаголовок', max_length=200)
     content = models.TextField('Текст статьи')
     date = models.DateField('Дата публикации', default=timezone.now)
-    # author = models.CharField(max_length=200)
-    # picture = models.ImageField(upload_to='articles/')
+    author = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True, blank=True)
+    picture = models.ImageField(upload_to='articles/', null=True, blank=True)
 
     def __str__(self):
         return self.title

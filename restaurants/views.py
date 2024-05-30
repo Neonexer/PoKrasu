@@ -1,7 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 import json
-from .models import Address, Restaurant
+from .models import Restaurant
 
 # Create your views here.
 def restaurants(request):
