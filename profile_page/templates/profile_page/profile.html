@@ -20,11 +20,15 @@
                             <img src="{% static 'profile_page/img/lesha.jpg' %}" alt="">
                         </div>
                         <div class="user_lk_btn">
-                            <a href="">Выйти</a>
+                            <a href="{% url 'logout' %}">Выйти</a>
                         </div>
                     </div>
                     <div class="user_lk_info">
+                        {% if user.is_authenticated %}
+                        <h2>Max</h2>
+                        {% else %}
                         <h2>Алёша</h2>
+                        {% endif %}
                         <p><span>@nuqo888</span></p>
                         <p><span>О себе:</span>Красивый, Обаятельный, С хорошим чувством юмора, Скромный, Эпатажный и Ласковый.</p>
                         <p class="d_flex"><img src="{% static 'profile_page/img/person_pin_circle.svg' %}" alt="">Красноярск</p>

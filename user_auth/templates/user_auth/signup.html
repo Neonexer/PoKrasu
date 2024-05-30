@@ -25,9 +25,10 @@
 
                 <div class="password-container">
 {#                    <input type="password" name="" id="password-field" class="input" placeholder="Введите пароль">#}
-                    {{ form.password }}
+                    {{ form.password1 }}
                     <div class="password-icon"></div>
-                    <input type="password" name="password2" id="password-field2" class="input" placeholder="Введите пароль">
+                    {{ form.password2 }}
+{#                    <input type="password" name="password2" id="password-field2" class="input" placeholder="Введите пароль">#}
                     <div class="password-icon2"></div>
                 </div>
                 <button class="register-btn"><div>Зарегистрироваться</div></button>
