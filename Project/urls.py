@@ -11,4 +11,4 @@ urlpatterns = [
     path('accounts/', include('user_auth.urls'), name='accounts'),
     path('profile/', include('profile_page.urls'), name='profile'),
     # path('restaurants/', include('restaurants.urls'), name='restaurants'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -17,21 +17,25 @@
                 <div class="user_lk_flex">
                     <div class="user_lk_avatar_box">
                         <div class="user_lk_avatar">
-                            <img src="{% static 'profile_page/img/lesha.jpg' %}" alt="">
+                            {% if user.img %}
+                                <img src="{{ user.img.url }}" alt="">
+                            {% else %}
+                                <img src="{% static 'profile_page/img/lesha.jpg' %}" alt="">
+                            {% endif %}
                         </div>
                         <div class="user_lk_btn">
                             <a href="{% url 'logout' %}">Выйти</a>
                         </div>
                     </div>
                     <div class="user_lk_info">
-                        {% if user.is_authenticated %}
-                        <h2>{{ user.username }}</h2>
+                        {% if user.first_name %}
+                            <h2>{{ user.first_name }}</h2>
                         {% else %}
-                        <h2>Алёша</h2>
+                            <h2>{{ user.username }}</h2>
                         {% endif %}
                         <p><span>@{{ user.username }}</span></p>
-                        <p><span>О себе:</span>Красивый, Обаятельный, С хорошим чувством юмора, Скромный, Эпатажный и Ласковый.</p>
-                        <p class="d_flex"><img src="{% static 'profile_page/img/person_pin_circle.svg' %}" alt="">Красноярск</p>
+                        <p><span>О себе:</span>{{ user.about }}</p>
+                        <p class="d_flex"><img src="{% static 'profile_page/img/person_pin_circle.svg' %}" alt="">{{ user.city }}</p>
                     </div>
                 </div>
                 <div class="user_lk_btn">

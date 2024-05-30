@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm, LoginForm
+from .forms import SignUpForm, LoginForm
 from django.contrib.auth.models import auth
 
 def signup(request):
-    form = CreateUserForm()
+    form = SignUpForm()
     if request.method == 'POST':
-        form = CreateUserForm(request.POST)
+        form = SignUpForm(request.POST)
 
         if form.is_valid():
             form.save()

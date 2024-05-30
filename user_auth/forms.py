@@ -5,11 +5,11 @@ from django.forms import ModelForm, TextInput, EmailInput
 # from django.contrib.auth.models import User
 from .models import User
 from django import forms
-from django.forms.widgets import PasswordInput, TextInput, EmailInput
+from django.forms.widgets import PasswordInput, TextInput, EmailInput, Textarea, FileInput
 
 
 # Create a User
-class CreateUserForm(UserCreationForm):
+class SignUpForm(UserCreationForm):
     password1 = forms.CharField(widget=PasswordInput(attrs={
         'id': 'password-field',
         'class': 'input',
@@ -53,6 +53,36 @@ class LoginForm(AuthenticationForm):
         'class': 'input',
         'placeholder': 'Введите пароль',
     }))
+
+
+class EditProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'username', 'email', 'city', 'about', 'img')
+
+        widgets = {
+            "first_name": TextInput(attrs={
+                "id": "name",
+            }),
+            "username": TextInput(attrs={
+                "id": "username"
+            }),
+            "email": EmailInput(attrs={
+                "id": "email"
+            }),
+            "city": TextInput(attrs={
+                "id": "city"
+            }),
+            "about": Textarea(attrs={
+                "id": "about"
+            }),
+            "img": FileInput(attrs={
+                "id": "photo-input",
+                "accept": "image/*",
+                "onchange": "loadPhoto(event)",
+                "style": "display: none;"
+            })
+        }
 
 
 # class SignUpForm(ModelForm):
