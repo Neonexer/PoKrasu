@@ -5,7 +5,7 @@ from user_auth.models import User
 
 
 # Create your models here.
-class Articles(models.Model):
+class Article(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField('Заголовок', max_length=200)
     subtitle = models.CharField('Подзаголовок', max_length=200)

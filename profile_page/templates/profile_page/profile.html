@@ -34,8 +34,8 @@
                             <h2>{{ user.username }}</h2>
                         {% endif %}
                         <p><span>@{{ user.username }}</span></p>
-                        <p><span>О себе:</span>{{ user.about }}</p>
-                        <p class="d_flex"><img src="{% static 'profile_page/img/person_pin_circle.svg' %}" alt="">{{ user.city }}</p>
+                        <p><span>О себе:</span>{% if user.about %}{{ user.about }}{% else %}Здесь вы можете написать информацию о себе{% endif %}</p>
+                        <p class="d_flex"><img src="{% static 'profile_page/img/person_pin_circle.svg' %}" alt="">{% if user.city %}{{ user.city }}{% else %}Красноярск{% endif %}</p>
                     </div>
                 </div>
                 <div class="user_lk_btn">

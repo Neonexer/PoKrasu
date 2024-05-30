@@ -130,22 +130,32 @@
             <div class="to_do">
                 <h2>Чем заняться?</h2>
                 <div class="to_do_content">
-                    <div class="to_do_box">
+                    {% for el in articles %}
+                        <div class="to_do_box">
                         <div class="to_do_img">
-                            <img src="img/cart.png" alt="">
-                            <h4>Заповедник <br> Столбы</h4>
+                            <img src="{{ el.picture.url}}" alt="">
+                            <h4>{{ el.title }}</h4>
                         </div>
-                        <p>Погрузитесь в уникальную красоту Заповедника Столбы в Красноярске.<br> С его величественными скалами и живописными пейзажами. </p>
+                        <p>{{ el.subtitle }}</p>
                         <a href="">Подробнее</a>
                     </div>
-                    <div class="to_do_box">
-                        <div class="to_do_img">
-                            <img src="img/cart.png" alt="">
-                            <h4>Заповедник <br> Столбы</h4>
-                        </div>
-                        <p>Погрузитесь в уникальную красоту Заповедника Столбы в Красноярске.<br> С его величественными скалами и живописными пейзажами. </p>
-                        <a href="">Подробнее</a>
-                    </div>
+                    {% endfor %}
+{#                    <div class="to_do_box">#}
+{#                        <div class="to_do_img">#}
+{#                            <img src="img/cart.png" alt="">#}
+{#                            <h4>Заповедник <br> Столбы</h4>#}
+{#                        </div>#}
+{#                        <p>Погрузитесь в уникальную красоту Заповедника Столбы в Красноярске.<br> С его величественными скалами и живописными пейзажами. </p>#}
+{#                        <a href="">Подробнее</a>#}
+{#                    </div>#}
+{#                    <div class="to_do_box">#}
+{#                        <div class="to_do_img">#}
+{#                            <img src="img/cart.png" alt="">#}
+{#                            <h4>Заповедник <br> Столбы</h4>#}
+{#                        </div>#}
+{#                        <p>Погрузитесь в уникальную красоту Заповедника Столбы в Красноярске.<br> С его величественными скалами и живописными пейзажами. </p>#}
+{#                        <a href="">Подробнее</a>#}
+{#                    </div>#}
                     <div class="to_do_box">
                         <div class="to_do_img">
                             <img src="img/cart.png" alt="">

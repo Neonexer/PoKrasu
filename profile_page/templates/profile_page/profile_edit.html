@@ -15,7 +15,7 @@
         <div class="wrapper">
             <div class="user_edit_lk">
                 <div class="profile-photo" onclick="document.getElementById('photo-input').click();">
-                    <img id="profile-photo" src="{{ user.img.url }}" alt="Profile Photo">
+                    <img id="profile-photo" src="" alt="Profile Photo">
 {#                    <input type="file" id="photo-input" accept="image/*" onchange="loadPhoto(event)" style="display: none;">#}
 {#                    {{ form.img }}#}
                 </div>
@@ -48,7 +48,7 @@
                         {{ form.about }}
                     </div>
                     <div class="form-actions">
-                        <button type="reset">ОТМЕНИТЬ</button>
+                        <button type="reset" onclick="location.href='{% url 'profile' %}';">ОТМЕНИТЬ</button>
                         <button type="submit">СОХРАНИТЬ</button>
                     </div>
                 </form>
