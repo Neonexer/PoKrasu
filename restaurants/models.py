@@ -1,4 +1,8 @@
 from django.db import models
+from django.utils import timezone
+
+from user_auth.models import User
+
 
 # Create your models here.
 
@@ -27,3 +31,16 @@ class Restaurant(models.Model):
         verbose_name = "Ресторан"
         verbose_name_plural = "Рестораны"
         # ordering = ['name']
+
+class Review(models.Model):
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    text = models.TextField(max_length=500)
+    date = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return self.user.username + " " + self.restaurant.name
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"

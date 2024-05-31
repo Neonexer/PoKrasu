@@ -1,6 +1,15 @@
-from django.shortcuts import render
+from sqlite3 import IntegrityError
+
+from django.shortcuts import render, redirect
 import json
-from .models import Restaurant
+
+from profile_page.models import Favorite
+from user_auth.models import User
+from .forms import ReviewForm
+from .models import Restaurant, Review
+
+from django.db import IntegrityError
+
 
 # Create your views here.
 def restaurants(request):
@@ -65,4 +74,33 @@ def restaurants(request):
     restaurants = Restaurant.objects.all()
 
 
-    return render(request,"restaurants/rest.html", {"restaurants":restaurants, "count":restaurants.count()})
+    return render(request,"restaurants/restaurants.html", {"restaurants":restaurants, "count":restaurants.count()})
+
+
+def restaurant_page(request, restaurant_id):
+    restaurant = Restaurant.objects.get(pk=restaurant_id)
+    user = User.objects.get(pk=request.user.id)
+
+    reviews = Review.objects.filter(restaurant_id=restaurant_id)
+
+    form = ReviewForm()
+    if request.method == "POST":
+        review = Review(restaurant=restaurant, user=user, text=request.POST["text"])
+        review.save()
+        return redirect('restaurant_page', restaurant_id)
+
+    print(restaurant.name)
+    return render(request, "restaurants/restaurant_page.html", {"restaurant":restaurant, "form":form, "reviews":reviews})
+
+def add_to_fav(request, restaurant_id):
+    restaurant = Restaurant.objects.get(pk=restaurant_id)
+    user = User.objects.get(pk=request.user.id)
+    try:
+        favorite = Favorite(restaurant=restaurant, user=user)
+        favorite.save()
+    except IntegrityError:
+        # favorite = Favorite(restaurant=restaurant, user=user)
+        # favorite.delete()
+        Favorite.objects.filter(restaurant=restaurant, user=user).delete()
+        # print("Favorite already exists")
+    return redirect('restaurant_page', restaurant_id)

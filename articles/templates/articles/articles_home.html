@@ -1,50 +1,73 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        .articles {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-        }
-        .article {
-            width: 20vw;
-            background-color: grey;
-            border-radius: 23px;
-            margin-top: 10px;
-            padding: 10px;
-        }
-        p {
-            margin-top: 20px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'articles/css/style.css' %}">
+    <title>Главная</title>
 </head>
+
 <body>
-    {% if articles %}
-        <div class="articles">
-            <div>
-                <h1>Статьи</h1>
-                {% for el in articles %}
-                    <div class="article">
-                        <h2>{{ el.title }}</h2>
-                        <h3>{{ el.subtitle }}</h3>
-                        <p>{{ el.date }}</p>
-                    </div>
-                {% endfor %}
+    <header>
+        <div class="wrapper">
+            <div class="header">
+                <a href="{% url 'main_page' %}"><img src="{% static 'main_page/img/logo.svg' %}" alt=""></a>
+                <ul class="nav_menu">
+                    <li><a href="{% url 'main_page' %}">Город</a></li>
+                    <li><a href="{% url 'restaurants' %}">Куда сходить</a></li>
+                    <li><a href="{% url 'articles' %}">События</a></li>
+                    <li><a href="">О нас</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a class="login_btn" href="{% url 'profile' %}">Профиль</a></li>
+                    {% else %}
+                        <li><a class="login_btn" href="{% url 'login' %}">Вход/Регистрация </a></li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
-    {% else %}
-        <div class="no-article">
-            <h1>Нет статей!</h1>
-        </div>
-    {% endif %}
+    </header>
+    <section id="blog">
+        <div class="wrapper">
+            <div class="blog_header">
+                <h2>Статьи</h2>
+{#                <div class="blog_select">#}
+{#                    <select name="" id="" value="Все">#}
+{#                        <option value="">Текст</option>#}
+{#                    </select>#}
+{#                    <select name="" id="" value="Период">#}
+{#                        <option value="">Текст</option>#}
+{#                    </select>#}
+{#                </div>#}
+            </div>
+            <div class="blog">
+                {% for el in articles %}
+                    <a href="/articles/{{ el.id }}" class="post">
+                    <h4>{{ el.title }}</h4>
+                    <p>{{ el.subtitle }}</p>
+                    <div class="post_footer">
+                        <span class="teg">
+                            #NewPost
+                        </span>
+                        <span class="date">
+                            {{ el.date}}
+                        </span>
+                    </div>
+                </a>
+                {% endfor %}
 
+                <div class="croshka">
+                    <button class="active_btn">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>...</button>
+                    <button><img src="{% static 'articles/img/arrow_right.svg' %}" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>

@@ -4,7 +4,7 @@
 }
 
 .bg {
-  background-image: url("../images/bg.png");
+  background-image: url("../img/bg.png");
   background-position: center;
   position: absolute;
   display: flex;
@@ -79,10 +79,10 @@
     right: 32px;
     top: 49%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2 {
     width: 20px;
@@ -91,10 +91,10 @@
     right: 32px;
     top: 62%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .register-btn {
     border: 0 solid transparent;
@@ -187,10 +187,10 @@
     right: 40px;
     top: 50%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2 {
     width: 20px;
@@ -199,10 +199,10 @@
     right: 40px;
     top: 61%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .register-btn {
     border: 0 solid transparent;
@@ -295,10 +295,10 @@
     right: 45px;
     top: 50%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2 {
     width: 20px;
@@ -307,10 +307,10 @@
     right: 45px;
     top: 64%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .register-btn {
     border: 0 solid transparent;
@@ -403,10 +403,10 @@
     right: 65px;
     top: 50%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2 {
     width: 20px;
@@ -415,10 +415,10 @@
     right: 65px;
     top: 64%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .register-btn {
     border: 0 solid transparent;
@@ -511,10 +511,10 @@
     right: 95px;
     top: 52%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2 {
     width: 20px;
@@ -523,10 +523,10 @@
     right: 95px;
     top: 66%;
     cursor: pointer;
-    background: url("../images/closed_eye.svg") 0 0 no-repeat;
+    background: url("../img/closed_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .password-icon2.opened {
-    background: url("../images/opened_eye.svg") 0 0 no-repeat;
+    background: url("../img/opened_eye.svg") 0 0 no-repeat;
   }
   .login-form .form-content .register-btn {
     border: 0 solid transparent;

@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'restaurants/css/style.css' %}">
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="header">
+                <a href="{% url 'main_page' %}"><img src="{% static 'main_page/img/logo.svg' %}" alt=""></a>
+                <ul class="nav_menu">
+                    <li><a href="{% url 'main_page' %}">Город</a></li>
+                    <li><a href="{% url 'restaurants' %}">Куда сходить</a></li>
+                    <li><a href="{% url 'articles' %}">События</a></li>
+                    <li><a href="">О нас</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a class="login_btn" href="{% url 'profile' %}">Профиль</a></li>
+                    {% else %}
+                        <li><a class="login_btn" href="{% url 'login' %}">Вход/Регистрация </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="review">
+        <div class="wrapper">
+            <div class="review">
+{#                <div class="header_rev">БЛОК С ФОТОГРАФИЯМИ</div>#}
+                <div class="header_rev">
+                    <img src="{{ restaurant.image }}" alt="" style="height: 100%">
+                </div>
+                <div class="restaurant_info">
+                    <div class="details">
+                        <h2>{{ restaurant.name }} <a href="{% url 'restaurant_page_fav' restaurant.id %}"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_692_3819" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+                            <rect width="40" height="40" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_692_3819)">
+                            <path d="M8.33398 35V8.33333C8.33398 7.41667 8.66037 6.63194 9.31315 5.97917C9.96593 5.32639 10.7507 5 11.6673 5H21.6673V8.33333H11.6673V29.9167L20.0007 26.3333L28.334 29.9167V18.3333H31.6673V35L20.0007 30L8.33398 35ZM28.334 15V11.6667H25.0007V8.33333H28.334V5H31.6673V8.33333H35.0007V11.6667H31.6673V15H28.334Z" fill="#1C1B1F"/>
+                            </g>
+                            </svg></a></h2>
+
+                        <p class="rating_p"><span>{{ restaurant.rating }}</span>9999 отзывов</p>
+                        <div class="details_info">
+                            <p><span>Тип кухни:</span>{{ restaurant.type }}</p>
+{#                            <p><span>Телефон:</span> +7 391 256-86-49</p>#}
+                            <p><span>Адрес:</span>{{ restaurant.address }}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="reviews">
+                    <h2>Отзывы <span>(999)</span></h2>
+                    {% for review in reviews %}
+                        <div class="reviews_content">
+                        <div class="avatar">
+                            <div class="avatar_img">
+                                <img src="{{ review.user.img.url }}" alt="User Avatar">
+                            </div>
+                            <div class="user">{{ review.user.username }}</div>
+                        </div>
+                        <div class="reviews_content_info">
+                            <div class="rev_rating">
+{#                                <div class="rev_rating_table">#}
+{#                                    <img src="/img/rating.png" alt="">#}
+{#                                    <img src="/img/rating.png" alt="">#}
+{#                                    <img src="/img/rating.png" alt="">#}
+{#                                    <img src="/img/rating.png" alt="">#}
+{#                                    <img src="/img/rating.png" alt="">#}
+{#                                </div>#}
+                                <div class="date">Отзыв написан {{ review.date }}.</div>
+                            </div>
+
+                            <div class="text">{{ review.text }}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="croshka">
+                        <button class="active_btn">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>...</button>
+                        <button><img src="{% static 'restaurants/img/arrow_right.svg' %}" alt=""></button>
+                    </div>
+                </div>
+            </div>
+            <form class="review_add" method="post">
+                <h3>Напишите отзыв</h3>
+{#                <textarea name="" id=""></textarea>#}
+                {% csrf_token %}
+                {{ form.text }}
+                <button type="submit" class="login_btn">Оставить отзыв</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

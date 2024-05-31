@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'articles/css/style.css' %}">
+    <title>Главная</title>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="header">
+                <a href="{% url 'main_page' %}"><img src="{% static 'main_page/img/logo.svg' %}" alt=""></a>
+                <ul class="nav_menu">
+                    <li><a href="{% url 'main_page' %}">Город</a></li>
+                    <li><a href="{% url 'restaurants' %}">Куда сходить</a></li>
+                    <li><a href="{% url 'articles' %}">События</a></li>
+                    <li><a href="">О нас</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a class="login_btn" href="{% url 'profile' %}">Профиль</a></li>
+                    {% else %}
+                        <li><a class="login_btn" href="{% url 'login' %}">Вход/Регистрация </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section id="post_page">
+        <div class="wrapper">
+            <div class="post_page">
+                <div class="post_info">
+                    <h2>{{ article.title }}</h2>
+                    <img src="{{ article.picture.url }}" alt="" width="50%" height="50%" style="float: left; margin: 0; margin-right: 20px; ">
+                    <p>{{ article.content }}</p>
+                    <br>
+                    <br>
+                    <p>{{ article.date }}</p>
+                    <p>{{ article.author.first_name }}</p>
+                </div>
+{#                <div class="post_side_bar">#}
+{#                    <h3>Другие статьи</h3>#}
+{#                    <a href="">Ресторан</a>#}
+{#                    <a href="">Кофейня</a>#}
+{#                    <a href="">Кафе</a>#}
+{#                    <a href="">Столовая</a>#}
+{#                    <a href="">Кондитерская</a>#}
+{#                </div>#}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

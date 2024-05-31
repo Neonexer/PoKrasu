@@ -1,6 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+
+from profile_page.models import Favorite
 from user_auth.forms import EditProfileForm
 from user_auth.models import User
 
@@ -9,7 +11,10 @@ from user_auth.models import User
 
 @login_required
 def profile(request):
-    return render(request, "profile_page/profile.html")
+    user = request.user
+    favorites = Favorite.objects.filter(user=user)
+
+    return render(request, "profile_page/profile.html", {"favorites": favorites})
 
 
 @login_required
