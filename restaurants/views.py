@@ -1,6 +1,7 @@
 from sqlite3 import IntegrityError
 
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
 import json
 
 from profile_page.models import Favorite
@@ -12,7 +13,7 @@ from django.db import IntegrityError
 
 
 # Create your views here.
-def restaurants(request):
+def restaurants(request, page=1):
 
     # file = "/Users/max/PycharmProjects/Project/restaurants/static/restaurants/result.json"
     #
@@ -71,17 +72,35 @@ def restaurants(request):
 
     # return render(request,"restaurants/rest.html", context={"data":data2})
 
+    paginator = Paginator(Restaurant.objects.all(), 10)
+    # print(paginator.count)
+    # print(paginator.num_pages)
+    print(page)
+
     restaurants = Restaurant.objects.all()
 
+    restaurant_reviews = {}
+    for i in restaurants:
+        review_count = Review.objects.filter(restaurant=i).count()
+        restaurant_reviews[i] = review_count
 
-    return render(request,"restaurants/restaurants.html", {"restaurants":restaurants, "count":restaurants.count()})
+
+    return render(request,"restaurants/restaurants.html", {
+        "restaurants":restaurants,
+        "count":restaurants.count(),
+        "restaurant_reviews":restaurant_reviews,
+        "paginator":paginator,
+        "page":paginator.page(page),
+    })
 
 
-def restaurant_page(request, restaurant_id):
+def restaurant_page(request, restaurant_id, page=1):
     restaurant = Restaurant.objects.get(pk=restaurant_id)
     user = User.objects.get(pk=request.user.id)
-
     reviews = Review.objects.filter(restaurant_id=restaurant_id)
+    reviews_count = reviews.count()
+
+    paginator = Paginator(reviews, 3)
 
     form = ReviewForm()
     if request.method == "POST":
@@ -90,7 +109,14 @@ def restaurant_page(request, restaurant_id):
         return redirect('restaurant_page', restaurant_id)
 
     print(restaurant.name)
-    return render(request, "restaurants/restaurant_page.html", {"restaurant":restaurant, "form":form, "reviews":reviews})
+    return render(request, "restaurants/restaurant_page.html", {
+        "restaurant":restaurant,
+        "form":form,
+        "reviews":reviews,
+        "reviews_count":reviews_count,
+        "paginator":paginator,
+        "page":paginator.page(page),
+    })
 
 def add_to_fav(request, restaurant_id):
     restaurant = Restaurant.objects.get(pk=restaurant_id)

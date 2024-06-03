@@ -47,7 +47,7 @@
                             </g>
                             </svg></a></h2>
 
-                        <p class="rating_p"><span>{{ restaurant.rating }}</span>9999 отзывов</p>
+                        <p class="rating_p"><span>{{ restaurant.rating }}</span>{{ reviews_count }} отзывов</p>
                         <div class="details_info">
                             <p><span>Тип кухни:</span>{{ restaurant.type }}</p>
 {#                            <p><span>Телефон:</span> +7 391 256-86-49</p>#}
@@ -57,14 +57,14 @@
 
                 </div>
                 <div class="reviews">
-                    <h2>Отзывы <span>(999)</span></h2>
-                    {% for review in reviews %}
+                    <h2>Отзывы <span>({{ reviews_count }})</span></h2>
+                    {% for review in page.object_list %}
                         <div class="reviews_content">
                         <div class="avatar">
                             <div class="avatar_img">
                                 <img src="{{ review.user.img.url }}" alt="User Avatar">
                             </div>
-                            <div class="user">{{ review.user.username }}</div>
+                            <div class="user">{{ review.user.first_name }}</div>
                         </div>
                         <div class="reviews_content_info">
                             <div class="rev_rating">
@@ -84,12 +84,34 @@
                     {% endfor %}
 
                     <div class="croshka">
-                        <button class="active_btn">1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>...</button>
-                        <button><img src="{% static 'restaurants/img/arrow_right.svg' %}" alt=""></button>
+                        {% if page.has_previous %}
+                            <a href="{% url 'restaurant_page_with_review' restaurant.id page.previous_page_number %}">
+                                <button>{{ page.previous_page_number }}</button>
+                            </a>
+                        {% endif %}
+                        <button class="active_btn">{{ page.number }}</button>
+                        {% if page.number != last_page and page.has_next %}
+                            <a href="{% url 'restaurant_page_with_review' restaurant.id page.next_page_number %}">
+                                    <button>{{ page.next_page_number }}</button>
+                            </a>
+                        {% endif %}
+{#                        <button>3</button>#}
+{#                        <button>4</button>#}
+                        {% if page.number != paginator.num_pages %}
+                            {% if page.next_page_number != paginator.num_pages %}
+                                <button>...</button>
+                            {% endif %}
+                            {% if page.next_page_number != paginator.num_pages %}
+                                <a href="{% url 'restaurant_page_with_review' restaurant.id paginator.num_pages %}">
+                                    <button>{{ paginator.num_pages }}</button>
+                                </a>
+                            {% endif %}
+                        {% endif %}
+                        {% if page.number != paginator.num_pages and page.has_next %}
+                            <a href="{% url 'restaurant_page_with_review' restaurant.id page.next_page_number %}">
+                                <button><img src="{% static 'restaurants/img/arrow_right.svg' %}" alt=""></button>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
