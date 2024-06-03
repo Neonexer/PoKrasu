@@ -2,6 +2,7 @@ from sqlite3 import IntegrityError
 
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 import json
 
 from profile_page.models import Favorite
@@ -96,14 +97,14 @@ def restaurants(request, page=1):
 
 def restaurant_page(request, restaurant_id, page=1):
     restaurant = Restaurant.objects.get(pk=restaurant_id)
-    user = User.objects.get(pk=request.user.id)
     reviews = Review.objects.filter(restaurant_id=restaurant_id)
     reviews_count = reviews.count()
 
     paginator = Paginator(reviews, 3)
 
     form = ReviewForm()
-    if request.method == "POST":
+    if request.method == "POST" and User.is_authenticated:
+        user = User.objects.get(pk=request.user.id)
         review = Review(restaurant=restaurant, user=user, text=request.POST["text"])
         review.save()
         return redirect('restaurant_page', restaurant_id)
@@ -118,6 +119,7 @@ def restaurant_page(request, restaurant_id, page=1):
         "page":paginator.page(page),
     })
 
+@login_required
 def add_to_fav(request, restaurant_id):
     restaurant = Restaurant.objects.get(pk=restaurant_id)
     user = User.objects.get(pk=request.user.id)

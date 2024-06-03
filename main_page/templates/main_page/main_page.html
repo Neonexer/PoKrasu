@@ -113,6 +113,29 @@
             </div>
         </div>
     </section>
+    <script>
+        // Создаем новый объект XMLHttpRequest
+var xhr = new XMLHttpRequest();
+
+// Задаем URL для запроса погоды в Красноярске (ID 1502026)
+var url = "https://api.openweathermap.org/data/2.5/weather?id=1502026&appid=YOUR_API_KEY";
+
+// Открываем соединение
+xhr.open("GET", url, true);
+
+// Отправляем запрос
+xhr.send();
+
+// Обработка ответа
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        // Выводим погоду в консоль
+        console.log("Погода в Красноярске: " + response.weather[0].description);
+        // Другие данные о погоде также доступны в объекте response
+    }
+};
+    </script>
 </body>
 
 </html>
