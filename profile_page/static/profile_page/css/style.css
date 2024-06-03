@@ -31,6 +31,7 @@ body {
 }
 
 .user_lk {
+    height: max-content;
     background: #fff;
     display: flex;
     justify-content: space-between;
