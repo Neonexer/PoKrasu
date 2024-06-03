@@ -42,7 +42,7 @@
 {#                </div>#}
             </div>
             <div class="blog">
-                {% for el in articles %}
+                {% for el in page.object_list %}
                     <a href="/articles/{{ el.id }}" class="post">
                     <h4>{{ el.title }}</h4>
                     <p>{{ el.subtitle }}</p>
@@ -58,12 +58,28 @@
                 {% endfor %}
 
                 <div class="croshka">
-                    <button class="active_btn">1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>4</button>
-                    <button>...</button>
-                    <button><img src="{% static 'articles/img/arrow_right.svg' %}" alt=""></button>
+                    {% if page.has_previous %}
+                        <a href="{% url 'articles_page' page.previous_page_number %}">
+                            <button>{{ page.previous_page_number }}</button>
+                        </a>
+                    {% endif %}
+
+                    <button class="active_btn">{{ page.number }}</button>
+
+                    {% if page.has_next %}
+                        <a href="{% url 'articles_page' page.next_page_number %}">
+                            <button>{{ page.next_page_number }}</button>
+                        </a>
+                        {% if page.next_page_number != paginator.num_pages %}
+                            <button>...</button>
+                            <a href="{% url 'articles_page' paginator.num_pages %}">
+                                <button>{{ paginator.num_pages }}</button>
+                            </a>
+                        {% endif %}
+                        <a href="{% url 'articles_page' page.next_page_number %}">
+                            <button><img src="{% static 'articles/img/arrow_right.svg' %}" alt=""></button>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
