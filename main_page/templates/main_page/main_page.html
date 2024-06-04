@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_tags %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -82,7 +83,7 @@
                                 </div>
                                 <div class="cart_info">
                                     <h3>{{ el.name }}</h3>
-                                    <p><span>{{ el.rating }}</span>9999 отзывов</p>
+                                    <p><span>{{ el.rating }}</span>{{ restaurant_reviews | get_item:el }} отзывов</p>
                                     <div class="key_cart">
                                         <p>{{ el.type }}</p>
                                     </div>
