@@ -97,7 +97,7 @@ def restaurants(request, page=1):
 
 def restaurant_page(request, restaurant_id, page=1):
     restaurant = Restaurant.objects.get(pk=restaurant_id)
-    reviews = Review.objects.filter(restaurant_id=restaurant_id)
+    reviews = Review.objects.filter(restaurant_id=restaurant_id).order_by('-date')
     reviews_count = reviews.count()
 
     paginator = Paginator(reviews, 3)
