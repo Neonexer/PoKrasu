@@ -10,5 +10,6 @@ urlpatterns = [
     path('articles/', include('articles.urls'), name='articles'),
     path('accounts/', include('user_auth.urls'), name='accounts'),
     path('profile/', include('profile_page.urls'), name='profile'),
+    path('about_us/', include('about_us.urls'), name='about_us'),
     # path('restaurants/', include('restaurants.urls'), name='restaurants'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

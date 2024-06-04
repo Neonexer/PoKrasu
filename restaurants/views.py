@@ -76,7 +76,7 @@ def restaurants(request, page=1):
     paginator = Paginator(Restaurant.objects.all(), 10)
     # print(paginator.count)
     # print(paginator.num_pages)
-    print(page)
+    # print(page)
 
     restaurants = Restaurant.objects.all()
 

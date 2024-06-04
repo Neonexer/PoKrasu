@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "restaurants.apps.RestaurantsConfig",
     "profile_page.apps.ProfilePageConfig",
     "main_page.apps.MainPageConfig",
+    "about_us.apps.AboutUsConfig"
 ]
 
 MIDDLEWARE = [

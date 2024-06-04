@@ -18,7 +18,7 @@
                     <li><a href="{% url 'main_page' %}">Город</a></li>
                     <li><a href="{% url 'restaurants' %}">Куда сходить</a></li>
                     <li><a href="{% url 'articles' %}">События</a></li>
-                    <li><a href="">О нас</a></li>
+                    <li><a href="{% url 'about_us' %}">О нас</a></li>
                     {% if user.is_authenticated %}
                         <li><a class="login_btn" href="{% url 'profile' %}">Профиль</a></li>
                     {% else %}
