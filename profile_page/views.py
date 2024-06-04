@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from profile_page.models import Favorite
+from restaurants.models import Restaurant, Review
 from user_auth.forms import EditProfileForm
 from user_auth.models import User
 
@@ -14,7 +15,17 @@ def profile(request):
     user = request.user
     favorites = Favorite.objects.filter(user=user)
 
-    return render(request, "profile_page/profile.html", {"favorites": favorites})
+    restaurants = Restaurant.objects.all()
+
+    restaurant_reviews = {}
+    for i in restaurants:
+        review_count = Review.objects.filter(restaurant=i).count()
+        restaurant_reviews[i] = review_count
+
+    return render(request, "profile_page/profile.html", {
+        "favorites": favorites,
+        "restaurant_reviews": restaurant_reviews,
+    })
 
 
 @login_required
